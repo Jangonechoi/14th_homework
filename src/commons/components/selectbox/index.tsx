@@ -346,7 +346,16 @@ export const Selectbox = forwardRef<HTMLSelectElement, SelectboxProps>(
                   aria-selected={option.value === value}
                   aria-disabled={option.disabled}
                 >
-                  {option.label}
+                  <span className={styles.optionLabel}>{option.label}</span>
+                  {option.value === value && (
+                    <Image
+                      src="/icons/check_outline_light_xs.svg"
+                      alt="selected"
+                      width={16}
+                      height={16}
+                      className={styles.checkIcon}
+                    />
+                  )}
                 </div>
               ))}
             </div>
