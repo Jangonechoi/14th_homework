@@ -1,7 +1,7 @@
 /**
  * 감정(Emotion) 타입 정의
  */
-export type EmotionType = 'Happy' | 'Sad' | 'Angry' | 'Surprise' | 'Etc';
+export type EmotionType = "Happy" | "Sad" | "Angry" | "Surprise" | "Etc";
 
 /**
  * 감정 데이터 인터페이스
@@ -17,49 +17,49 @@ export interface EmotionData {
 
 /**
  * 감정(Emotion) Enum 데이터
- * 
+ *
  * 각 감정은 화면에 표시될 텍스트, 이미지 경로(medium, small), 색상을 포함합니다.
  */
 export const EMOTION: Record<EmotionType, EmotionData> = {
   Happy: {
-    label: '행복해요',
+    label: "행복해요",
     images: {
-      medium: 'emotion-happy-m.svg',
-      small: 'emotion-happy-s.svg',
+      medium: "emotion-happy-m.svg",
+      small: "emotion-happy-s.svg",
     },
-    color: 'red60',
+    color: "red60",
   },
   Sad: {
-    label: '슬퍼요',
+    label: "슬퍼요",
     images: {
-      medium: 'emotion-sad-m.svg',
-      small: 'emotion-sad-s.svg',
+      medium: "emotion-sad-m.svg",
+      small: "emotion-sad-s.svg",
     },
-    color: 'blue60',
+    color: "blue60",
   },
   Angry: {
-    label: '화나요',
+    label: "화나요",
     images: {
-      medium: 'emotion-angry-m.svg',
-      small: 'emotion-angry-s.svg',
+      medium: "emotion-angry-m.svg",
+      small: "emotion-angry-s.svg",
     },
-    color: 'gray60',
+    color: "gray60",
   },
   Surprise: {
-    label: '놀랐어요',
+    label: "놀랐어요",
     images: {
-      medium: 'emotion-surprise-m.svg',
-      small: 'emotion-surprise-s.svg',
+      medium: "emotion-surprise-m.svg",
+      small: "emotion-surprise-s.svg",
     },
-    color: 'yellow60',
+    color: "yellow60",
   },
   Etc: {
-    label: '기타',
+    label: "기타",
     images: {
-      medium: 'emotion-etc-m.svg',
-      small: 'emotion-etc-s.svg',
+      medium: "emotion-etc-m.svg",
+      small: "emotion-etc-s.svg",
     },
-    color: 'green60',
+    color: "green60",
   },
 } as const;
 
@@ -72,6 +72,5 @@ export const EMOTION_KEYS = Object.keys(EMOTION) as EmotionType[];
  * 감정 타입 가드 함수
  */
 export const isEmotionType = (value: unknown): value is EmotionType => {
-  return typeof value === 'string' && value in EMOTION;
+  return typeof value === "string" && value in EMOTION;
 };
-
